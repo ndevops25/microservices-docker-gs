@@ -28,14 +28,41 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin
 
-  clientes-service:
-    build: clientes-service
+  produtos-service:
+    build: produtos-service
     ports:
       - "8080:8080"  # padrão, sobrescrito se necessário
     networks:
       - ecommerce-network
     volumes:
-      - clientes-service:/app  # em produção pode ser removido
+      - produtos-service:/app  # em produção pode ser removido
+
+  categorias-service:
+    build: categorias-service
+    ports:
+      - "8081:8081"  # padrão, sobrescrito se necessário
+    networks:
+      - ecommerce-network
+    volumes:
+      - categorias-service:/app  # em produção pode ser removido
+
+  fornecedores-service:
+    build: fornecedores-service
+    ports:
+      - "8082:8082"  # padrão, sobrescrito se necessário
+    networks:
+      - ecommerce-network
+    volumes:
+      - fornecedores-service:/app  # em produção pode ser removido
+
+  avaliacoes-service:
+    build: avaliacoes-service
+    ports:
+      - "8083:8083"  # padrão, sobrescrito se necessário
+    networks:
+      - ecommerce-network
+    volumes:
+      - avaliacoes-service:/app  # em produção pode ser removido
 
 networks:
   ecommerce-network:
@@ -48,7 +75,10 @@ networks:
     driver: bridge
 
 volumes:
-  clientes-service:
+  produtos-service:
+  categorias-service:
+  fornecedores-service:
+  avaliacoes-service:
   pgdata:
   pgadmin_data:
   phpmyadmin_data:
