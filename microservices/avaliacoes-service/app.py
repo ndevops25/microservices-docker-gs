@@ -1,5 +1,5 @@
-# app.py - Microserviço de Produtos (versão simplificada)
 from flask import Flask, jsonify, request
+from datetime import datetime
 
 # Inicialização da aplicação Flask
 app = Flask(__name__)
@@ -11,11 +11,8 @@ sample_products = [
         "name": "Smartphone XYZ",
         "description": "Smartphone de última geração com câmera de alta resolução",
         "price": 1999.99,# app.py - Microserviço de Avaliações (versão simplificada)
-from flask import Flask, jsonify, request
-from datetime import datetime
-
-# Inicialização da aplicação Flask
-app = Flask(__name__)
+    }
+]
 
 # Dados de exemplo
 sample_reviews = [
