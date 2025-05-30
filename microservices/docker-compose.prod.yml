@@ -9,8 +9,8 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
-  produtos-service:
-    image: produtos-clientes:1.0.0  # imagem versionada e testada
+  avaliacoes-service:
+    image: tfk8scloud/avaliacoes-ecommerce:latest # imagem versionada e testada
     environment:
       - APP_ENV=prod
       - FLASK_ENV=prod  # não ativa modo debug no Flask
@@ -18,7 +18,7 @@ services:
       - "8080:8080"
 
   categorias-service:
-    image: categorias-clientes:1.0.0  # imagem versionada e testada
+    image: tfk8scloud/categorias-ecommerce:latest  # imagem versionada e testada
     environment:
       - APP_ENV=prod
       - FLASK_ENV=prod  # não ativa modo debug no Flask
@@ -26,15 +26,15 @@ services:
       - "8081:8081"
 
   fornecedores-service:
-    image: fornecedores-clientes:1.0.0  # imagem versionada e testada
+    image: tfk8scloud/fornecedores-ecommerce:latest  # imagem versionada e testada
     environment:
       - APP_ENV=prod
       - FLASK_ENV=prod  # não ativa modo debug no Flask
     ports:
       - "8082:8082"
 
-  avaliacoes-service:
-    image: avaliacoes-clientes:1.0.0  # imagem versionada e testada
+  produtos-service:
+    image: tfk8scloud/produtos-ecommerce:latest  # imagem versionada e testada
     environment:
       - APP_ENV=prod
       - FLASK_ENV=prod  # não ativa modo debug no Flask
