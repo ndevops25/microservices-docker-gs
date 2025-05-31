@@ -397,7 +397,7 @@ Todas as imagens estão disponíveis no Docker Hub sob o namespace `tfk8scloud`:
 | **🏭 Fornecedores** | `docker pull tfk8scloud/fornecedores-ecommerce:latest` | ~158MB | [🔗 Hub](https://hub.docker.com/r/tfk8scloud/fornecedores-ecommerce) |
 | **🛍️ Produtos** | `docker pull tfk8scloud/produtos-ecommerce:latest` | ~158MB | [🔗 Hub](https://hub.docker.com/r/tfk8scloud/produtos-ecommerce) |
 
-![Imagens no Docker Hub](https://claude.ai/chat/docs/images/docker-hub-images.png)
+![Imagens no Docker Hub](docs/images/docker-hub-images.png)
 
 ### 🚀 Como Publicar Atualizações
 
@@ -446,7 +446,7 @@ docker run -p 9001:9001 tfk8scloud/produtos-ecommerce:latest
 
 ### 📸 Análises Docker Scout
 
-<details> <summary>🔍 Ver capturas das análises</summary>
+🔍 Ver capturas das análises
 
 #### ⭐ Avaliações
 
@@ -464,7 +464,6 @@ docker run -p 9001:9001 tfk8scloud/produtos-ecommerce:latest
 
 ![Docker Scout da imagem produtos](docs/images/scout/produtos-ecommerce-scout.png)
 
-</details>
 
 ### 🎯 Análise Consolidada
 
