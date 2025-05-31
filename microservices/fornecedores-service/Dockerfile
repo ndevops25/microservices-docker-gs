@@ -1,4 +1,4 @@
-# Dockerfile para o Microserviço de Fornecedores
+# Dockerfile para o Microserviço de Produtos
 FROM python:3.10-slim
 
 # Define o diretório de trabalho na imagem
@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir flask gunicorn
 COPY app.py .
 
 # Informa em qual porta o container estará escutando
-EXPOSE 6004
+EXPOSE 8001
 
 # Comando para iniciar o aplicativo quando o container for executado
-CMD ["gunicorn", "--bind", "0.0.0.0:6003", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "app:app"]
