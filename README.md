@@ -3,13 +3,13 @@
 
 <div align="center">
 
-![Microservices](https://claude.ai/chat/docs/images/microservices.png)
+![Microservices](docs/images/microservices.png)
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/) [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) [![Docker](https://img.shields.io/badge/Docker-Latest-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com/) [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-tfk8scloud-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/u/tfk8scloud)
 
 **Sistema de e-commerce baseado em microserviços para gerenciamento de produtos, categorias, fornecedores e avaliações.**
 
-[🚀 Quick Start](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-quick-start) - [📖 Documentação](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-documenta%C3%A7%C3%A3o) - [🛡️ Segurança](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#%EF%B8%8F-an%C3%A1lise-de-seguran%C3%A7a---docker-scout) - [🤝 Contribuir](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-contribui%C3%A7%C3%A3o)
+[🚀 Quick Start](#-quick-start) - [📖 Documentação](#-documenta%C3%A7%C3%A3o) - [🛡️ Segurança](an%C3%A1lise-de-seguran%C3%A7a---docker-scout) - [🤝 Contribuir](#-contribui%C3%A7%C3%A3o)
 
 </div>
 
@@ -18,17 +18,17 @@
 📋 Índice
 ---------
 
--   [🏗️ Arquitetura](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#%EF%B8%8F-arquitetura)
--   [⚡ Tecnologias](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-tecnologias)
--   [🚀 Quick Start](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-quick-start)
--   [📁 Estrutura do Projeto](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-estrutura-do-projeto)
--   [🌐 API Endpoints](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-api-endpoints)
--   [🐳 Docker Hub](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-docker-hub)
--   [🛡️ Análise de Segurança](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#%EF%B8%8F-an%C3%A1lise-de-seguran%C3%A7a---docker-scout)
--   [🔄 Comunicação entre Serviços](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-comunica%C3%A7%C3%A3o-entre-servi%C3%A7os)
--   [🧪 Testes](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-testes)
--   [🚀 Roadmap](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-roadmap)
--   [🤝 Contribuição](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-contribui%C3%A7%C3%A3o)
+-   [🏗️ Arquitetura](#-arquitetura)
+-   [⚡ Tecnologias](#-tecnologias)
+-   [🚀 Quick Start](#-quick-start)
+-   [📁 Estrutura do Projeto](#-estrutura-do-projeto)
+-   [🌐 API Endpoints](#-api-endpoints)
+-   [🐳 Docker Hub](#-docker-hub)
+-   [🛡️ Análise de Segurança](#-an%C3%A1lise-de-seguran%C3%A7a---docker-scout)
+-   [🔄 Comunicação entre Serviços](#-comunica%C3%A7%C3%A3o-entre-servi%C3%A7os)
+-   [🧪 Testes](#-testes)
+-   [🚀 Roadmap](#-roadmap)
+-   [🤝 Contribuição](#-contribui%C3%A7%C3%A3o)
 
 * * * * *
 
@@ -38,26 +38,6 @@
 ### 🎯 Visão Geral
 
 O projeto é baseado em **arquitetura de microserviços**, garantindo alta escalabilidade, manutenibilidade e independência entre os serviços.
-
-```
-graph TB
-    subgraph "E-commerce Microservices"
-        A[🛍️ Produtos Service<br/>Port: 9001]
-        B[📂 Categorias Service<br/>Port: 7001]
-        C[🏭 Fornecedores Service<br/>Port: 8001]
-        D[⭐ Avaliações Service<br/>Port: 6001]
-    end
-
-    A -.->|REST API| B
-    A -.->|REST API| C
-    D -.->|REST API| A
-
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-
-```
 
 ### 🔧 Microserviços
 
@@ -208,10 +188,10 @@ flask run --port=6001
 
 | 🎯 Serviço | 🌐 Base URL | 📋 Endpoints | 📖 Documentação |
 | --- | --- | --- | --- |
-| **🛍️ Produtos** | `http://localhost:9001` | 3 endpoints | [Ver detalhes](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-produtos) |
-| **📂 Categorias** | `http://localhost:7001` | 2 endpoints | [Ver detalhes](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-categorias) |
-| **🏭 Fornecedores** | `http://localhost:8001` | 2 endpoints | [Ver detalhes](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-fornecedores) |
-| **⭐ Avaliações** | `http://localhost:6001` | 2 endpoints | [Ver detalhes](https://claude.ai/chat/81dda40d-ab07-4916-8fe6-91b27d0f5af1#-avalia%C3%A7%C3%B5es) |
+| **🛍️ Produtos** | `http://localhost:9001` | 3 endpoints | [Ver detalhes](#-produtos) |
+| **📂 Categorias** | `http://localhost:7001` | 2 endpoints | [Ver detalhes](#-categorias) |
+| **🏭 Fornecedores** | `http://localhost:8001` | 2 endpoints | [Ver detalhes](#-fornecedores) |
+| **⭐ Avaliações** | `http://localhost:6001` | 2 endpoints | [Ver detalhes](#-avalia%C3%A7%C3%B5es) |
 
 ### 🛍️ Produtos
 
@@ -327,19 +307,19 @@ docker run -p 9001:9001 tfk8scloud/produtos-ecommerce:latest
 
 #### ⭐ Avaliações
 
-![Docker Scout da imagem avaliações](https://claude.ai/chat/docs/images/scout/avaliacoes-ecommerce-scout.png)
+![Docker Scout da imagem avaliações](docs/images/scout/avaliacoes-ecommerce-scout.png)
 
 #### 📂 Categorias
 
-![Docker Scout da imagem categorias](https://claude.ai/chat/docs/images/scout/categorias-ecommerce-scout.png)
+![Docker Scout da imagem categorias](docs/images/scout/categorias-ecommerce-scout.png)
 
 #### 🏭 Fornecedores
 
-![Docker Scout da imagem fornecedores](https://claude.ai/chat/docs/images/scout/fornecedores-ecommerce-scout.png)
+![Docker Scout da imagem fornecedores](docs/images/scout/fornecedores-ecommerce-scout.png)
 
 #### 🛍️ Produtos
 
-![Docker Scout da imagem produtos](https://claude.ai/chat/docs/images/scout/produtos-ecommerce-scout.png)
+![Docker Scout da imagem produtos](docs/images/scout/produtos-ecommerce-scout.png)
 
 </details>
 
@@ -347,88 +327,15 @@ docker run -p 9001:9001 tfk8scloud/produtos-ecommerce:latest
 
 <div align="center">
 
-| 📊 Métrica | 📈 Valor | 📋 Descrição |
-| --- | --- | --- |
-| **🔢 Total de Vulnerabilidades** | **33 por serviço** | Consistente entre todos |
-| **🚨 Severidade Alta** | **2** | Riscos significativos |
-| **⚠️ Severidade Média** | **2** | Riscos moderados |
-| **📋 Severidade Baixa** | **29** | Múltiplos riscos menores |
-| **🐳 Base Image** | **python:3.10-slim** | Desatualizada |
-| **✅ Versão Recomendada** | **python:3.13-slim** | Correção principal |
-
-</div>
-
-### 🔍 Detalhamento por Severidade
-
-#### 🚨 High Severity (2 vulnerabilidades)
-
--   🎯 **Impacto**: Potenciais riscos de segurança significativos
--   📍 **Localização**: Presentes em todos os microserviços
--   ⚡ **Ação**: Atualização imediata recomendada
-
-#### ⚠️ Medium Severity (2 vulnerabilidades)
-
--   🎯 **Impacto**: Riscos moderados de segurança
--   📍 **Localização**: Distribuídas entre os serviços
--   ⚡ **Ação**: Atualização prioritária
-
-#### 📋 Low Severity (29 vulnerabilidades)
-
--   🎯 **Impacto**: Riscos menores, mas em grande quantidade
--   📍 **Localização**: Múltiplas vulnerabilidades de baixo impacto
--   ⚡ **Ação**: Monitoramento e correção gradual
-
-### 🚀 Plano de Melhorias
-
-#### ✅ Ações Imediatas (Prioridade Alta)
-
-1.  **🔄 Atualizar Base Image**
-
-    ```
-    # ❌ Versão atual
-    FROM python:3.10-slim
-
-    # ✅ Versão recomendada
-    FROM python:3.13-slim
-
-    ```
-
-2.  **📈 Benefícios Esperados**
-
-    -   ✅ Redução de **2 vulnerabilidades High**
-    -   ✅ Redução de **1 vulnerabilidade Medium**
-    -   ✅ Redução de **3 vulnerabilidades Low**
-    -   ✅ Base mais atualizada e segura
-
-#### 🔄 Ações de Manutenção (Prioridade Média)
-
-1.  **📊 Monitoramento Contínuo**
-
-    ```
-    # Executar análise regular
-    docker scout quickview tfk8scloud/[service]-ecommerce:latest
-
-    ```
-
-2.  **🔧 Integração CI/CD**
-
-    ```
-    # Adicionar ao pipeline
-    - name: Security Scan
-      run: docker scout cves ${{ env.IMAGE_NAME }} --exit-code
-
-    ```
-
-### 📈 Métricas de Melhoria
-
-#### 📊 Impacto da Atualização para python:3.13-slim
-
 | 📊 Métrica | 📉 Antes | 📈 Depois (Estimado) | 🚀 Melhoria |
 | --- | --- | --- | --- |
 | **🚨 Vulnerabilidades High** | 2 | 0 | ✅ **-100%** |
 | **⚠️ Vulnerabilidades Medium** | 2 | 1 | ✅ **-50%** |
 | **📋 Vulnerabilidades Low** | 29 | 26 | ✅ **-10%** |
 | **🛡️ Score de Segurança** | Atenção | Bom | ⬆️ **+40%** |
+
+</div>
+
 
 ### 🛠️ Comandos de Verificação
 
@@ -503,103 +410,6 @@ docker scout compare tfk8scloud/avaliacoes-ecommerce:old --to tfk8scloud/avaliac
 | **🐍 Python Security Updates** | [python.org/security](https://www.python.org/news/security/) | Atualizações de segurança |
 | **🛡️ OWASP Container Security** | [owasp.org](https://owasp.org/www-project-container-security/) | Boas práticas |
 
-* * * * *
-
-🔄 Comunicação entre Serviços
------------------------------
-
-### 🎯 Arquitetura Atual (REST)
-
-```
-graph LR
-    A[🛍️ Produtos] -.->|REST API| B[📂 Categorias]
-    A -.->|REST API| C[🏭 Fornecedores]
-    D[⭐ Avaliações] -.->|REST API| A
-
-    subgraph "Comunicação Síncrona"
-        B
-        C
-        A
-        D
-    end
-
-```
-
-### 🚀 Arquitetura Futura (Event-Driven)
-
-Em um ambiente de produção, os serviços serão integrados através de sistemas de mensageria:
-
-| 🛠️ Tecnologia | 📝 Descrição | 🎯 Uso |
-| --- | --- | --- |
-| **📨 Amazon SNS/SQS** | Simple Notification/Queue Service | Produção AWS |
-| **🐰 RabbitMQ** | Message Broker AMQP | Ambiente híbrido |
-| **⚡ Apache Kafka** | Streaming Platform | Alta performance |
-
-#### 📋 Tópicos de Eventos Planejados
-
-| 🎯 Serviço | 📨 Eventos | 📝 Descrição |
-| --- | --- | --- |
-| **🛍️ Produtos** | `produto-criado`<br/>`produto-atualizado`<br/>`estoque-alterado`<br/>`preco-alterado` | Eventos de ciclo de vida |
-| **📂 Categorias** | `categoria-criada`<br/>`categoria-atualizada`<br/>`hierarquia-alterada` | Mudanças estruturais |
-| **🏭 Fornecedores** | `fornecedor-cadastrado`<br/>`entrega-realizada`<br/>`fornecedor-inativado` | Logística e supply chain |
-| **⭐ Avaliações** | `avaliacao-aprovada`<br/>`resumo-atualizado`<br/>`avaliacao-destacada` | Feedback de clientes |
-
-* * * * *
-
-🧪 Testes
----------
-
-### 📊 Status dos Testes
-
-| 🎯 Tipo | 📈 Status | 🔧 Ferramenta | 📋 Cobertura |
-| --- | --- | --- | --- |
-| **🔧 Unitários** | 🚧 Em desenvolvimento | `pytest` | 🎯 Meta: 80% |
-| **🔗 Integração** | 📋 Planejado | `pytest` + `requests` | 🎯 Meta: 70% |
-| **🌐 E2E** | 📋 Planejado | `selenium` | 🎯 Meta: 60% |
-| **⚡ Performance** | 📋 Planejado | `locust` | 🎯 Meta: 95% |
-
-### 🚀 Executar Testes
-
-```
-# 🔧 Testes unitários
-pytest tests/unit/
-
-# 🔗 Testes de integração
-pytest tests/integration/
-
-# 📊 Relatório de cobertura
-pytest --cov=services/ --cov-report=html
-
-```
-
-### ✅ Health Checks
-
-Verificar se todos os serviços estão funcionais:
-
-```
-#!/bin/bash
-# 🏥 health-check.sh
-
-services=("produtos:9001" "categorias:7001" "fornecedores:8001" "avaliacoes:6001")
-
-echo "🏥 Verificando saúde dos serviços..."
-
-for service in "${services[@]}"; do
-    name=$(echo $service | cut -d: -f1)
-    port=$(echo $service | cut -d: -f2)
-
-    response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:$port/health)
-
-    if [ $response -eq 200 ]; then
-        echo "✅ $name: Saudável"
-    else
-        echo "❌ $name: Indisponível (HTTP $response)"
-    fi
-done
-
-```
-
-* * * * *
 
 🚀 Roadmap
 ----------
@@ -660,61 +470,6 @@ done
 | **🔧 Refactor** | Refatoração de código | Testes não quebrados |
 | **⚡ Performance** | Otimizações | Benchmarks antes/depois |
 
-### 🧪 Padrões de Código
-
-#### 🐍 Python Style Guide
-
-```
-# ✅ Bom
-def get_product_by_id(product_id: int) -> dict:
-    """
-    Retorna produto pelo ID.
-
-    Args:
-        product_id: ID do produto
-
-    Returns:
-        Dados do produto
-    """
-    return {"id": product_id, "name": "Produto"}
-
-# ❌ Evitar
-def getProd(id):
-    return {"id": id}
-
-```
-
-#### 🔧 Configuração do Ambiente
-
-```
-# Instalar pre-commit hooks
-pip install pre-commit
-pre-commit install
-
-# Formatar código
-black services/
-isort services/
-flake8 services/
-
-```
-
-### 🏷️ Versionamento
-
-Seguimos [Semantic Versioning](https://semver.org/):
-
-| 📋 Tipo | 📈 Versão | 📝 Quando Usar |
-| --- | --- | --- |
-| **🔨 MAJOR** | 2.0.0 | Breaking changes |
-| **✨ MINOR** | 1.1.0 | Nova funcionalidade |
-| **🐛 PATCH** | 1.0.1 | Bug fixes |
-
-### 🏆 Hall da Fama
-
-Agradecimentos aos contribuidores:
-
-<table> <tr> <td align="center"> <img src="https://github.com/ndevops25.png" width="60" height="60" style="border-radius: 50%"/> <br><strong>ndevops25</strong> <br><em>🚀 Founder & Architect</em> </td> <td align="center"> <img src="https://via.placeholder.com/60" width="60" height="60" style="border-radius: 50%"/> <br><strong>Seu Nome</strong> <br><em>🤝 Contribuidor</em> </td> </tr> </table>
-
-* * * * *
 
 📞 Suporte
 ----------
@@ -765,52 +520,6 @@ pip install -r requirements.txt --force-reinstall
 **Problema**: Import errors
 
 ```
-# ✅ Solução
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-
-```
-
-</details>
-
-### 📊 Status dos Serviços
-
-Monitore a saúde em tempo real:
-
-[![Produtos Status](https://img.shields.io/badge/Produtos-%F0%9F%9F%A2%20Online-brightgreen)](http://localhost:9001/health) [![Categorias Status](https://img.shields.io/badge/Categorias-%F0%9F%9F%A2%20Online-brightgreen)](http://localhost:7001/health) [![Fornecedores Status](https://img.shields.io/badge/Fornecedores-%F0%9F%9F%A2%20Online-brightgreen)](http://localhost:8001/health) [![Avaliações Status](https://img.shields.io/badge/Avalia%C3%A7%C3%B5es-%F0%9F%9F%A2%20Online-brightgreen)](http://localhost:6001/health)
-
-* * * * *
-
-📄 Licença
-----------
-
-### 📋 MIT License
-
-```
-MIT License
-
-Copyright (c) 2024 E-commerce Microservices Team
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-```
-
-* * * * *
 
 🎯 Conclusão
 ------------
