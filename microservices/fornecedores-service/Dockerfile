@@ -20,3 +20,4 @@ EXPOSE 8001
 
 # Comando para iniciar o aplicativo quando o container for executado
 CMD ["gunicorn", "--bind", "0.0.0.0:8001", "app:app"]
+
