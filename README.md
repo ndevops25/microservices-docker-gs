@@ -3,7 +3,7 @@
 
 <div align="center">
 
-![Microservices](docs/images/microservices.png)
+![Microservices](docs/svg/layered-architecture.svg)
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/) [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) [![Docker](https://img.shields.io/badge/Docker-Latest-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com/) [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-tfk8scloud-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/u/tfk8scloud)
 
@@ -36,6 +36,8 @@
 ---------------
 
 ### 🎯 Visão Geral
+
+![Microservices](docs/images/microservices.png)
 
 O projeto é baseado em **arquitetura de microserviços**, garantindo alta escalabilidade, manutenibilidade e independência entre os serviços.
 
@@ -101,6 +103,146 @@ curl http://localhost:6001/health  # Avaliações
 ```
 
 ### 🔧 Execução Manual (Desenvolvimento)
+
+🛠️ Desenvolvimento Local
+=========================
+
+Esta seção aborda como gerar imagens Docker e testar os microserviços localmente durante o desenvolvimento.
+
+📦 Gerando Imagens Docker
+-------------------------
+
+### 🏗️ Build Individual por Serviço
+
+Construa cada microserviço separadamente para desenvolvimento e testes:
+
+bash
+
+```
+# 📁 Navegue até o diretório raiz do projeto
+cd e-commerce-microservices
+
+# 🛍️ Microserviço de Produtos
+cd services/produtos-service
+docker build -t ecommerce/produtos:latest .
+docker build -t ecommerce/produtos:dev .
+
+# 📂 Microserviço de Categorias
+cd ../categorias-service
+docker build -t ecommerce/categorias:latest .
+docker build -t ecommerce/categorias:dev .
+
+# 🏭 Microserviço de Fornecedores
+cd ../fornecedores-service
+docker build -t ecommerce/fornecedores:latest .
+docker build -t ecommerce/fornecedores:dev .
+
+# ⭐ Microserviço de Avaliações
+cd ../avaliacoes-service
+docker build -t ecommerce/avaliacoes:latest .
+docker build -t ecommerce/avaliacoes:dev .
+```
+
+### 📊 Verificar Imagens Construídas
+
+bash
+
+```
+# 📋 Listar todas as imagens do projeto
+docker images | grep ecommerce
+
+# 🔍 Inspecionar uma imagem específica
+docker inspect ecommerce/produtos:latest
+
+# 📊 Verificar tamanho das imagens
+docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}" | grep ecommerce
+```
+
+🧪 Testando Localmente
+----------------------
+
+### ⚡ Execução Rápida (Desenvolvimento)
+
+#### 🔄 Método 1: Execução Individual
+
+bash
+
+```
+# 🛍️ Produtos (Port: 9001)
+docker run -d\
+  --name produtos-dev\
+  -p 9001:9001\
+  -e FLASK_ENV=development\
+  ecommerce/produtos:dev
+
+# 📂 Categorias (Port: 7001)
+docker run -d\
+  --name categorias-dev\
+  -p 7001:7001\
+  -e FLASK_ENV=development\
+  ecommerce/categorias:dev
+
+# 🏭 Fornecedores (Port: 8001)
+docker run -d\
+  --name fornecedores-dev\
+  -p 8001:8001\
+  -e FLASK_ENV=development\
+  ecommerce/fornecedores:dev
+
+# ⭐ Avaliações (Port: 6001)
+docker run -d\
+  --name avaliacoes-dev\
+  -p 6001:6001\
+  -e FLASK_ENV=development\
+  ecommerce/avaliacoes:dev
+```
+
+Execute o ambiente de desenvolvimento:
+
+bash
+
+```
+# 🚀 Subir ambiente de desenvolvimento
+docker-compose -f docker-compose.dev.yml up -d --build
+
+# 📊 Verificar status
+docker-compose -f docker-compose.dev.yml ps
+
+# 📋 Ver logs
+docker-compose -f docker-compose.dev.yml logs -f
+
+# 🛑 Parar ambiente
+docker-compose -f docker-compose.dev.yml down
+```
+
+### 🧪 Testes de API
+
+#### 📋 Testes Manuais com cURL
+
+bash
+
+```
+# 🛍️ Testar Produtos
+echo "🛍️ Testando API de Produtos..."
+curl -X GET http://localhost:9001/health
+curl -X GET http://localhost:9001/produtos
+curl -X GET http://localhost:9001/produtos/1
+
+# 📂 Testar Categorias
+echo "📂 Testando API de Categorias..."
+curl -X GET http://localhost:7001/health
+curl -X GET http://localhost:7001/categorias
+
+# 🏭 Testar Fornecedores
+echo "🏭 Testando API de Fornecedores..."
+curl -X GET http://localhost:8001/health
+curl -X GET http://localhost:8001/fornecedores
+
+# ⭐ Testar Avaliações
+echo "⭐ Testando API de Avaliações..."
+curl -X GET http://localhost:6001/health
+curl -X GET http://localhost:6001/avaliacoes/produtos/1
+```
 
 <details> <summary>🔍 Clique para expandir instruções detalhadas</summary>
 
@@ -183,6 +325,7 @@ flask run --port=6001
 
 🌐 API Endpoints
 ----------------
+
 
 ### 📊 Resumo das APIs
 
