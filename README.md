@@ -94,12 +94,6 @@ cd e-commerce-microservices
 # 2️⃣ Execute com Docker (Recomendado)
 docker-compose up -d
 
-# 3️⃣ Verificar saúde dos serviços
-curl http://localhost:9001/health  # Produtos
-curl http://localhost:7001/health  # Categorias
-curl http://localhost:8001/health  # Fornecedores
-curl http://localhost:6001/health  # Avaliações
-
 ```
 
 ### 🔧 Execução Manual (Desenvolvimento)
@@ -127,21 +121,40 @@ cd services/produtos-service
 docker build -t ecommerce/produtos:latest .
 docker build -t ecommerce/produtos:dev .
 
+🔄 Execução localmente
+docker run -p 6001:6001 ecommerce/produtos:latest
+
+
 # 📂 Microserviço de Categorias
 cd ../categorias-service
 docker build -t ecommerce/categorias:latest .
 docker build -t ecommerce/categorias:dev .
+
+🔄 Execução localmente
+docker run -p 7001:7001 ecommerce/categorias:latest
 
 # 🏭 Microserviço de Fornecedores
 cd ../fornecedores-service
 docker build -t ecommerce/fornecedores:latest .
 docker build -t ecommerce/fornecedores:dev .
 
+🔄 Execução localmente
+docker run -p 8001:8001 ecommerce/fornecedores:latest
+
 # ⭐ Microserviço de Avaliações
 cd ../avaliacoes-service
 docker build -t ecommerce/avaliacoes:latest .
 docker build -t ecommerce/avaliacoes:dev .
+
+🔄 Execução localmente
+docker run -p 9001:9001 ecommerce/avaliacoes:latest
 ```
+
+# 3️⃣ Verificar saúde dos serviços
+curl http://localhost:9001/health  # Produtos
+curl http://localhost:7001/health  # Categorias
+curl http://localhost:8001/health  # Fornecedores
+curl http://localhost:6001/health  # Avaliações
 
 ### 📊 Verificar Imagens Construídas
 
