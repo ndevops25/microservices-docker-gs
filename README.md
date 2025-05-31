@@ -3,7 +3,7 @@
 
 <div align="center">
 
-![Arquitetura de Camadas](docs/svg/layered-architecture.svg)
+![Arquitetura de Camadas](docs/images/layered-architecture.png)
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/) [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) [![Docker](https://img.shields.io/badge/Docker-Latest-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com/) [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-tfk8scloud-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/u/tfk8scloud)
 
